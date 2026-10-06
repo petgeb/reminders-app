@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reminders</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Reminders</h1>
+  <form id="add-form">
+    <input id="text" placeholder="Remind me to…" required autofocus>
+    <input id="due" type="datetime-local">
+    <button>Add</button>
+  </form>
+  <nav id="filters">
+    <button data-filter="all" class="active">All</button>
+    <button data-filter="open">Open</button>
+    <button data-filter="done">Done</button>
+  </nav>
+  <ul id="list"></ul>
+  <p id="empty" hidden>Nothing here yet.</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
