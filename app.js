@@ -8,7 +8,7 @@ function load() {
   try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch { return []; }
 }
 function save() {
-  try { localStorage.setItem(KEY, JSON.stringify(items)); } catch {}
+  try { localStorage.setItem(KEY, JSON.stringify(items)); } catch { /* storage unavailable; keep working in memory */ }
 }
 
 function fmt(due) {
