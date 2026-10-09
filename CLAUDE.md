@@ -15,3 +15,8 @@ Open `index.html` in a browser, or serve the folder: `python3 -m http.server 800
 - Data lives in `localStorage` under the key `reminders.v1`; bump the version if the item shape changes.
 - Item shape: `{ id, text, due (datetime-local string | null), done, notified }`.
 - Notifications only fire while the page is open.
+
+## CI/CD
+- `.github/workflows/ci.yml`: ESLint (`npm run lint`) on pushes to non-main branches and on pull requests.
+- `.github/workflows/deploy.yml`: on push to `main`, publishes `index.html`, `style.css`, `app.js` to GitHub Pages (https://petgeb.github.io/reminders-app/).
+- New files the app needs at runtime must be added to the `cp` line in `deploy.yml`.
